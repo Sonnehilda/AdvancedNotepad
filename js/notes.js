@@ -10,6 +10,7 @@ const changeTitleInput = document.querySelector("#change-title input")
 const titleElement = document.querySelector("h3")
 
 let parsedNotepads = JSON.parse(localStorage.getItem("notes"))
+let changedState = 0;
 
 document.addEventListener("keydown", function(e) {
     if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)  && (e.key === "s" || e.key === "S")) {
@@ -34,6 +35,7 @@ function loadNote() {
 
 function saveNote()
 {
+    if (changedState) changedState = 0
     const id = parseInt(localStorage.getItem("current"))
     parsedNotepads = JSON.parse(localStorage.getItem("notes"))
     const objIndex = parsedNotepads.findIndex((obj => obj.id == id))
@@ -99,6 +101,22 @@ function updateTitle(event) {
     }
 }
 
+function changed() {
+    changedState = 1;
+}
+
+window.addEventListener("beforeunload", function (e) {
+    if (changedState)
+    {
+        const confirmationMessage = 'It looks like you have been editing something. '
+                                + 'If you leave before saving, your changes will be lost.';
+
+        (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+        return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
+    }
+});
+
+notepad.addEventListener("keydown", changed)
 editButton.addEventListener("click", editTitle)
 changeTitleForm.addEventListener("submit", updateTitle)
 changeTitleForm.addEventListener("focusout", updateTitle)
