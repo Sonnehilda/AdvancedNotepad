@@ -177,7 +177,7 @@ function gotoEnd() {
 
 function searchPageUpdate() {
     pageCurrent = 1
-    updatePageCurrentDisplay(pageCurrent)
+    updatePageDisplay()
 }
 
 pageNext.addEventListener("click", gotoNext)
