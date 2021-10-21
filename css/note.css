@@ -1,0 +1,287 @@
+body {
+    font-family: op-b;
+    background-color: black;
+    color: white;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    font-weight: 100;
+
+    overflow-x: hidden !important;
+    overflow-y: auto;
+    min-width: 100% !important;
+    max-width:100%;
+    height:100%;
+    min-height: 100%;
+    touch-action: none;
+}
+
+input, ul, li, a, a:hover {all:unset}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+nav {
+    display:inline-block;
+    background-color: #342DB5;
+    width: 100%;
+    height: 4em;
+    margin-bottom: 1.4em;
+}
+
+#note:hover, #about:hover, #logout:hover {
+    filter:brightness(75%);
+    cursor:pointer;
+}
+
+#logout {
+    position: absolute;
+    left: 92.5%;
+
+    display:flex;
+    justify-self: flex-end;
+    align-items: center;
+
+    font-size: 1.5em;
+    text-shadow: 2px 2px #333333;
+
+    height:inherit;
+}
+
+#contents{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    font-family: op-m;
+    font-size: 2.25em;
+    text-shadow: 2px 2px #333333;
+
+    width: 75%;
+    height:inherit;
+}
+
+input:focus::placeholder {
+    color: transparent;
+  }
+
+h3 {
+    display: inline-flex;
+
+    font-size: 3em;
+    text-shadow: 2px 2px #342DB5;
+
+    white-space: nowrap !important;
+}
+
+h4 {
+    position: absolute;
+    left: 2.5%;
+
+    color:gray;
+    font-size: 2.5em;
+
+    white-space: nowrap !important;
+}
+
+#edit-note {
+    position: absolute;
+    left: 2.5%;
+
+    width: 95%;
+    height: 72.75%;
+    margin-top: 1.5em;
+    border: 1px solid gray;
+}
+
+textarea {
+    resize: none;
+
+    background-color: transparent;
+
+    color: white;
+
+    width: 100%;
+    height: 100%;
+    padding: 0.5em;
+}
+
+.updatedText {
+    animation-name: updatedText;
+    animation-duration: 1000ms;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+}
+
+.updatedButton {
+    animation-name: updatedButton;
+    animation-duration: 250ms;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+}
+
+#main {
+    display: inline-flex;
+    justify-content: left;
+    margin-left: 2.5%;
+}
+
+#change-title input {
+    font-size: 3em;
+    white-space: nowrap !important;
+
+    width: 100%;
+    height: 1.2em;
+    margin-bottom: 0.25em;
+}
+
+#edit {
+    user-select: none;
+
+    display: inline-flex;
+    align-items: center;
+
+    font-size: 2em;
+    text-align: center;
+
+    margin-left: 0.1em;
+    height: 2em;
+    filter: brightness(50%);
+}
+
+#edit:hover {
+    filter: brightness(75%);
+    cursor: pointer;
+}
+
+#sub {
+    display: flex;
+    justify-content: right;
+
+    width: 97.5%;
+}
+
+#close {
+    background-color: orange;
+    border: 1px solid orange;
+
+    font-size: 1.5em;
+    text-align: center;
+    color: black;
+    
+    width: 5em;
+    height: 100%;
+    margin-right: 0.5em;
+}
+
+#delete {
+    background-color: red;
+    border: 1px solid red;
+
+    font-size: 1.5em;
+    text-align: center;
+    color: black;
+    
+    width: 5.25em;
+    height: 100%;
+}
+
+#save {
+    background-color: green;
+    border: 1px solid green;
+
+    font-size: 1.5em;
+    text-align: center;
+    color: black;
+    
+    width: 4em;
+    height: 100%;
+    margin-right: 0.5em;
+}
+
+#close:hover, #delete:hover, #save:hover {
+    filter: brightness(75%);
+}
+
+@keyframes updatedText {
+    0% {
+        color: Yellow;
+    }
+    50% {
+        color: lightyellow;
+    }
+    100% {
+        color: white;
+    }
+}
+
+@keyframes updatedButton {
+    0% {
+        filter: brightness(100%);
+        background-color: Yellow;
+    }
+    100% {
+        background-color: green;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    nav{
+        height: 3em;
+    }
+    #logout {
+        left: 90%;
+        font-size: 1.25em;
+    }
+    #contents {
+        display:flex;
+        justify-content: space-around;
+        font-size: 1.8em;
+    }
+    h3, h4 {
+        font-size: 2.5em;
+        text-overflow:ellipsis;
+    }
+
+    #change-title input {
+        font-size: 2.5em;
+        white-space: nowrap !important;
+    
+        height: 1.35em;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    h4 {
+        display: none;
+    }
+    #sub {
+        display: flex;
+        justify-content: left;
+        margin-left: 2.5%;
+        margin-bottom: -0.3em;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    nav{
+        height: 1.5em;
+    }
+    #logout {
+        left: 89%;
+        font-size: 0.5em;
+    }
+    #contents {
+        font-size: 1em;
+    }
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
+}

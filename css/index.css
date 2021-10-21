@@ -1,0 +1,291 @@
+body {
+    font-family: op-b;
+    background-color: black;
+    color: white;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    font-weight: 100;
+
+    overflow-x: hidden !important;
+    overflow-y: auto;
+    min-width: 100% !important;
+    max-width:100%;
+    height:100%;
+    min-height: 100%;
+    touch-action: none;
+}
+
+input, ul, li, a, a:hover {all:unset}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+nav {
+    display:inline-block;
+    background-color: #342DB5;
+    width: 100%;
+    height: 4em;
+    margin-bottom: 1.4em;
+}
+
+#note:hover, #about:hover, #logout:hover {
+    filter:brightness(75%);
+    cursor:pointer;
+}
+
+#contents{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    font-family: op-m;
+    font-size: 2.25em;
+    text-shadow: 2px 2px #333333;
+
+    width: 75%;
+    height:inherit;
+}
+
+#logout {
+    position: absolute;
+    left: 92.5%;
+
+    display:flex;
+    justify-self: flex-end;
+    align-items: center;
+
+    font-size: 1.5em;
+    text-shadow: 2px 2px #333333;
+
+    height:inherit;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    color: #F9FF10;
+    font-size: 4em;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    font-size: 4em;
+    text-shadow: 2px 2px #342DB5;
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+#login-form {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    justify-content: center;
+
+    height: 5em;
+    top: 10em;
+}
+
+#login-form input {
+    text-align: center;
+    border-bottom: 1px solid white;
+
+    width: 20em;
+    padding: 1em;
+}
+
+#create-note {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    justify-content: center;
+
+    width: 50em;
+    height: 5em;
+    margin-top: -0.75em;
+}
+
+#create-note input {
+    text-align: center;
+    border-bottom: 1px solid white;
+
+    width: 20em;
+    padding: 1em;
+}
+
+#note-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    padding-top: 6em;
+    height: 344px;
+}
+
+#note-list li {
+    display: inline-flex;
+    justify-self: center;
+    list-style:none;
+
+    text-align: center;
+    font-size: 2em;
+    text-shadow: 2px 2px #342DB5;
+
+    width: max-content;
+    height: 2em;
+
+    white-space: nowrap !important;
+}
+
+#note-list li a:hover {
+    filter: brightness(75%);
+    cursor: pointer;
+}
+
+#note-list li a:focus {
+    filter: brightness(75%);
+    cursor: pointer;
+}
+
+#date {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.75em;
+    color: #333333;
+    margin-left: 1em;
+    text-shadow: none;
+}
+
+.page {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: flex-end;
+    
+    text-align: center;
+    font-size: 2em;
+    text-shadow: 2px 2px #342DB5;
+}
+
+#pageDeco-display {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+#arrow-left {
+    margin-right: 2em;
+}
+
+#arrow-right {
+    margin-left: 2em;
+}
+
+#arrow-left, #arrow-right, #arrow-toStart, #arrow-toEnd {
+    filter:opacity(50%);
+    text-shadow: none;
+}
+
+#arrow-left:hover, #arrow-right:hover, #arrow-toStart:hover, #arrow-toEnd:hover {
+    filter:opacity(75%);
+    cursor: pointer;
+}
+
+.updated {
+    animation-name: updated;
+    animation-duration: 500ms;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+}
+
+@keyframes updated {
+    0% {
+        text-shadow: none;
+        color: Yellow;
+    }
+    50% {
+        text-shadow: 1px 1px #342DB5;
+        color: lightyellow;
+    }
+    100% {
+        text-shadow: 2px 2px #342DB5;
+        color: white;
+    }
+}
+
+span, .page {
+    user-select: none;
+}
+
+#search-input {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    justify-content: center;
+
+    margin-top: 2.5em;
+    height: 5em;
+    text-align: center;
+
+    width: 20em;
+}
+
+#search-form input::placeholder
+{
+    color: darkgray;
+}
+
+@media only screen and (max-width: 520px) {
+    nav{
+        height: 3em;
+    }
+    #logout {
+        left: 90%;
+        font-size: 1.25em;
+    }
+    #contents {
+        display:flex;
+        justify-content: space-around;
+        font-size: 1.8em;
+    }
+    h1, h2 {
+        font-size: 2.5em;
+        text-overflow:ellipsis;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    nav{
+        height: 1.5em;
+    }
+    #logout {
+        left: 89%;
+        font-size: 0.5em;
+    }
+    #contents {
+        font-size: 1em;
+    }
+    h1, h2 {
+        font-size: 2em;
+    }
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
+}

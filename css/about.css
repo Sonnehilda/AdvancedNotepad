@@ -1,0 +1,165 @@
+body {
+    font-family: op-b;
+    background-color: black;
+    color: white;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    font-weight: 100;
+
+    overflow-x: hidden !important;
+    overflow-y: auto;
+    min-width: 100% !important;
+    max-width:100%;
+    height:100%;
+    min-height: 100%;
+    touch-action: none;
+}
+
+html {
+    height: 100%;
+}
+
+input, ul, li, a, a:hover {all:unset}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+nav {
+    display:inline-block;
+    background-color: #342DB5;
+    width: 100%;
+    height: 4em;
+    margin-bottom: 1.4em;
+}
+
+#note:hover, #about:hover, #logout:hover {
+    filter:brightness(75%);
+    cursor:pointer;
+}
+
+#logout {
+    position: absolute;
+    left: 92.5%;
+
+    display:flex;
+    justify-self: flex-end;
+    align-items: center;
+
+    font-size: 1.5em;
+    text-shadow: 2px 2px #333333;
+
+    height:inherit;
+}
+
+#contents{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    font-family: op-m;
+    font-size: 2.25em;
+    text-shadow: 2px 2px #333333;
+
+    width: 75%;
+    height:inherit;
+}
+
+#title {
+    display: flex;
+    justify-content: center;
+
+    font-size: 4em;
+    text-shadow: 2px 2px #342DB5;
+}
+
+#subtitle {
+    display: flex;
+    justify-content: center;
+
+    font-family: "op-s";
+    font-size: 2em;
+    text-shadow: 2px 2px #342DB5;
+    white-space: nowrap;
+
+    width: 100%;
+}
+
+#container-contents {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    
+    font-family: "op-s";
+    font-size: 1.75em;
+    color: darkgray;
+
+    white-space: normal;
+    word-break: keep-all;
+
+    width: 25em;
+}
+#container-contents p {
+    height: 1.75em;
+}
+
+@media only screen and (max-width: 520px) {
+    nav{
+        height: 3em;
+    }
+    #logout {
+        left: 90%;
+        font-size: 1.25em;
+    }
+    #contents {
+        display:flex;
+        justify-content: space-around;
+        font-size: 1.8em;
+    }
+    #title {
+        font-size: 2.5em;
+        text-overflow:ellipsis;
+    }
+    #subtitle {
+        font-size: 1.25em;
+    }
+    #container-contents {
+        font-size: 1.05em;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    nav{
+        height: 1.5em;
+    }
+    #logout {
+        left: 89%;
+        font-size: 0.5em;
+    }
+    #contents {
+        font-size: 1em;
+    }
+    #title {
+        font-size: 2em;
+    }
+    #subtitle {
+        font-size: 1em;
+    }
+    #container-contents {
+        font-size: 0.85em;
+    }
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
+}
