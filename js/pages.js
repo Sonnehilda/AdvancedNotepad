@@ -56,7 +56,7 @@ function onSubmitNote(event) {
     notes.unshift(noteObj)
     saveNotes()
 
-    if (noteList.childElementCount < NOTES_PER_PAGE) drawNotepad(noteObj, (NOTES_PER_PAGE-noteList.childElementCount)-1)
+    if (noteList.childElementCount < NOTES_PER_PAGE && pageCurrent === 1) drawNotepad(noteObj, (NOTES_PER_PAGE-noteList.childElementCount)-1)
     else updatePageDisplay()
 }
 
