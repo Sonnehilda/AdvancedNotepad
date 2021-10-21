@@ -35,7 +35,7 @@ function loadNote() {
 
 function saveNote()
 {
-    if (changedState) changedState = 0
+    changedState = 0
     const id = parseInt(localStorage.getItem("current"))
     parsedNotepads = JSON.parse(localStorage.getItem("notes"))
     const objIndex = parsedNotepads.findIndex((obj => obj.id == id))
@@ -55,11 +55,17 @@ function updateColorNotepad()
 }
 
 function deleteNote() {
-    const id = parseInt(localStorage.getItem("current"))
-    parsedNotepads = JSON.parse(localStorage.getItem("notes"))
-    const filtered = parsedNotepads.filter(item => item.id !== id)
-    localStorage.setItem("notes", JSON.stringify(filtered))
-    gotoMenu()
+    let result
+    if (navigator.language === "ko-KR") result = confirm("해당 메모장을 정말로 삭제하시겠습니까?");
+    else result = confirm("Are you sure you want to delete this notepad?");
+    if (result) {
+        changedState = 0
+        const id = parseInt(localStorage.getItem("current"))
+        parsedNotepads = JSON.parse(localStorage.getItem("notes"))
+        const filtered = parsedNotepads.filter(item => item.id !== id)
+        localStorage.setItem("notes", JSON.stringify(filtered))
+        gotoMenu()
+    }
 }
 
 function gotoMenu()
