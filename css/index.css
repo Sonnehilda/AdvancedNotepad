@@ -112,7 +112,6 @@ input:focus::placeholder {
     display: flex;
     justify-content: center;
 
-    width: 50em;
     height: 5em;
     margin-top: -0.75em;
 }
@@ -226,7 +225,7 @@ input:focus::placeholder {
     }
 }
 
-span, .page {
+#contents, span, .page {
     user-select: none;
 }
 
@@ -249,6 +248,17 @@ span, .page {
 {
     color: darkgray;
 }
+@media only screen and (max-width: 700px) {
+    h2 {
+        font-size: 3em;
+    }
+    #note-list li {
+        margin-top: 0.4m;
+    }
+    ul {
+        font-size: 1em;
+    }
+}
 
 @media only screen and (max-width: 520px) {
     nav{
@@ -263,9 +273,24 @@ span, .page {
         justify-content: space-around;
         font-size: 1.8em;
     }
+    #create-note input, #login-form input {
+        font-size: 0.75em;
+    }
     h1, h2 {
-        font-size: 2.5em;
+        font-size: 2em;
         text-overflow:ellipsis;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+    }
+    h2 {
+        text-shadow: 1.5px 1.5px #342DB5;
+    }
+    #note-list li {
+        margin-top: 1.5em;
+    }
+    ul {
+        font-size: 0.65em;
     }
 }
 
@@ -280,8 +305,20 @@ span, .page {
     #contents {
         font-size: 1em;
     }
+    #create-note input, #login-form input {
+        font-size: 0.6em;
+    }
     h1, h2 {
-        font-size: 2em;
+        font-size: 1.5em;
+    }
+    h2 {
+        text-shadow: 1px 1px #342DB5;
+    }
+    #note-list li {
+        margin-top: 8em;
+    }
+    ul {
+        font-size: 0.25em;
     }
 }
 

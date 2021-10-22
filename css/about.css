@@ -53,7 +53,7 @@ nav {
     height:inherit;
 }
 
-#contents{
+#contents {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -70,49 +70,105 @@ nav {
     height:inherit;
 }
 
-#title {
+#container {
+    margin: 0 auto;
+    text-align: center;
     display: flex;
     justify-content: center;
+}
 
-    font-size: 4em;
+#title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-size: 400%;
     text-shadow: 2px 2px #342DB5;
+
+    width: max-content;
 }
 
 #subtitle {
-    display: flex;
-    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 
     font-family: "op-s";
-    font-size: 2em;
+    font-size: 200%;
     text-shadow: 2px 2px #342DB5;
+    text-align: center;
     white-space: nowrap;
 
-    width: 100%;
+    margin-top: 2.25em;
+
+    width: max-content;
 }
 
 #container-contents {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    
+
     display: flex;
     flex-direction: column;
     align-content: center;
     
     font-family: "op-s";
-    font-size: 1.75em;
+    font-size: 100%;
     color: darkgray;
+    text-align: left;
 
     white-space: normal;
     word-break: keep-all;
-
-    width: 25em;
+ 
+    margin-top: 8em;
 }
+
 #container-contents p {
-    height: 1.75em;
+    height: max-content;
+    font-size: 1.5em;
 }
 
-@media only screen and (max-width: 520px) {
+#contents, span, .page {
+    user-select: none;
+}
+
+@media only screen and (min-width: 1080px) {
+    #container {
+        width: 42.5em;
+    }
+}
+
+@media only screen and (max-width: 1080px) {
+    #title {
+        font-size: 300%;
+        text-overflow:ellipsis;
+    }
+    #subtitle {
+        font-size: 150%;
+    }
+    #container-contents {
+        margin-top: 1em;
+        width: 32.5em;
+        margin-top: 6em;
+    }
+    #container-contents p {
+        font-size: 1em;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    #title {
+        font-size: 200%;
+        text-overflow:ellipsis;
+    }
+    #subtitle {
+        font-size: 100%;
+    }
+    #container-contents {
+        width: 21em;
+        margin-top: 4em;
+    }
+}
+
+@media only screen and (max-width: 480px) {
     nav{
         height: 3em;
     }
@@ -126,14 +182,19 @@ nav {
         font-size: 1.8em;
     }
     #title {
-        font-size: 2.5em;
+        font-size: 170%;
         text-overflow:ellipsis;
+        text-shadow: 1px 1px #342DB5;
     }
     #subtitle {
-        font-size: 1.25em;
+        margin-top: 3em;
+        font-size: 75%;
+        text-shadow: 1px 1px #342DB5;
     }
     #container-contents {
-        font-size: 1.05em;
+        width: 17.5em;
+        height: 100%;
+        margin-top: 4em;
     }
 }
 
@@ -147,15 +208,6 @@ nav {
     }
     #contents {
         font-size: 1em;
-    }
-    #title {
-        font-size: 2em;
-    }
-    #subtitle {
-        font-size: 1em;
-    }
-    #container-contents {
-        font-size: 0.85em;
     }
 }
 

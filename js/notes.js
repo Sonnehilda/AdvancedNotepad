@@ -122,7 +122,7 @@ window.addEventListener("beforeunload", function (e) {
     }
 });
 
-notepad.addEventListener("keydown", changed)
+notepad.addEventListener("change", changed)
 editButton.addEventListener("click", editTitle)
 changeTitleForm.addEventListener("submit", updateTitle)
 changeTitleForm.addEventListener("focusout", updateTitle)

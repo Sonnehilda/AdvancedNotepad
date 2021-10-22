@@ -13,12 +13,13 @@ function gotoNote() {
     location.replace("index.html")
 }
 
-aboutSpan.addEventListener("click", gotoAbout)
-noteSpan.addEventListener("click", gotoNote)
-
 function loadLogOutButton() {
     if (localStorage.getItem("username") !== null) {
         logOutButton.classList.remove("hidden")
         logOutButton.addEventListener("click", logOut)
     }
 }
+
+aboutSpan.addEventListener("click", gotoAbout)
+noteSpan.addEventListener("click", gotoNote)
+logOutButton.addEventListener("click", logOut)

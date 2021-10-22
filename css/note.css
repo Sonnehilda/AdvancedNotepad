@@ -208,6 +208,10 @@ textarea {
     filter: brightness(75%);
 }
 
+#contents, span, .page {
+    user-select: none;
+}
+
 @keyframes updatedText {
     0% {
         color: Yellow;
@@ -256,7 +260,7 @@ textarea {
     }
 }
 
-@media only screen and (max-width:500px) {
+@media only screen and (max-width:600px) {
     h4 {
         display: none;
     }

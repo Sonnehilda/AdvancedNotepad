@@ -93,7 +93,7 @@ function updatePageDisplay() {
 
         const parsedNotepads = JSON.parse(savedNotepads)
         let filtered = parsedNotepads.filter(item => item.name === localStorage.getItem("username"))
-        if (searchInput.value !== "") filtered = filtered.filter(item => item.title.includes(searchInput.value))
+        if (searchInput.value !== "") filtered = filtered.filter(item => item.title.toUpperCase().includes(searchInput.value.toUpperCase()))
 
         if (temp !== -1) temp = pageTotal
         pageTotal = Math.floor((filtered.length-1)/NOTES_PER_PAGE)+1
