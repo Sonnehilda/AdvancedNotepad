@@ -14,6 +14,7 @@ let changedState = 0;
 
 document.addEventListener("keydown", function(e) {
     if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)  && (e.key === "s" || e.key === "S")) {
+        changedState = 0
         e.preventDefault()
         saveNote()
     }
@@ -35,13 +36,13 @@ function loadNote() {
 
 function saveNote()
 {
-    changedState = 0
     const id = parseInt(localStorage.getItem("current"))
     parsedNotepads = JSON.parse(localStorage.getItem("notes"))
     const objIndex = parsedNotepads.findIndex((obj => obj.id == id))
     parsedNotepads[objIndex].text = notepad.value
     localStorage.setItem("notes", JSON.stringify(parsedNotepads))
     updateColorNotepad()
+    changedState = 0
 }
 
 function updateColorNotepad()
@@ -112,7 +113,7 @@ function changed() {
 }
 
 window.addEventListener("beforeunload", function (e) {
-    if (changedState)
+    if (changedState === 1)
     {
         const confirmationMessage = 'It looks like you have been editing something. '
                                 + 'If you leave before saving, your changes will be lost.';

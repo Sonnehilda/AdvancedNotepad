@@ -1,5 +1,5 @@
 body {
-    font-family: op-b;
+    font-family: op-b, PFStardust;
     background-color: black;
     color: white;
     overflow:hidden;
@@ -44,7 +44,7 @@ nav {
     justify-content: space-evenly;
     align-items: center;
 
-    font-family: op-m;
+    font-family: op-m, PFStardust;
     font-size: 2.25em;
     text-shadow: 2px 2px #333333;
 

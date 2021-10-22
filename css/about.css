@@ -1,5 +1,5 @@
 body {
-    font-family: op-b;
+    font-family: op-b, PFStardust;
     background-color: black;
     color: white;
     overflow:hidden;
@@ -62,7 +62,7 @@ nav {
     justify-content: space-evenly;
     align-items: center;
 
-    font-family: op-m;
+    font-family: op-m, PFStardust;
     font-size: 2.25em;
     text-shadow: 2px 2px #333333;
 
@@ -93,7 +93,7 @@ nav {
     left: 50%;
     transform: translateX(-50%);
 
-    font-family: "op-s";
+    font-family: op-s, PFStardust;
     font-size: 200%;
     text-shadow: 2px 2px #342DB5;
     text-align: center;
@@ -110,7 +110,7 @@ nav {
     flex-direction: column;
     align-content: center;
     
-    font-family: "op-s";
+    font-family: op-s, PFStardust;
     font-size: 100%;
     color: darkgray;
     text-align: left;
