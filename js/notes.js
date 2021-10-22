@@ -14,9 +14,11 @@ let changedState = 0;
 
 document.addEventListener("keydown", function(e) {
     if ((window.navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)  && (e.key === "s" || e.key === "S")) {
-        changedState = 0
         e.preventDefault()
         saveNote()
+        setInterval(() => {
+            changedState = 0
+        }, 1)
     }
 }, false);
 
